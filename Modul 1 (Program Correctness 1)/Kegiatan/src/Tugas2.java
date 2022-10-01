@@ -12,7 +12,7 @@ public class Tugas2 {
                 NIM = input.next();
 
                 if(!NIM.contains("10370311")){
-                    throw new Exception("Nim Anda Harus Terdapat 10370311");
+                    throw new Exception("NIM Anda Harus Terdapat 10370311 di dalamnya, Coba Lagi");
                 }else if(NIM.length() > 15){
                     throw new Exception("NIM lebih dari 15, Coba Lagi");
                 }else if (NIM.length() < 15){
