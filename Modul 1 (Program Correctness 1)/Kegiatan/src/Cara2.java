@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Cek {
+public class Cara2 {
     static final String code = "10370311";
 
     public static String pengecekan(String nim) {

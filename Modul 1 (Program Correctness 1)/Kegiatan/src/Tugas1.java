@@ -4,7 +4,7 @@ public class Tugas1 {
             int[] arr = new int[5];
             arr[5] = 25;
             System.out.println("Aman");
-        }catch(Exception e){
+        }catch(ArrayIndexOutOfBoundsException e){
             System.out.println("Error");
         }
     }
