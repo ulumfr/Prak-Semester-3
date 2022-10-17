@@ -5,37 +5,44 @@ public class Tugas1 {
 
     String cek(String nim) {
         if (nim.length() != 15) {
-            return "The number needs to be 15 digits!";
+            return "NIM anda harus berjumlah 15 digits!";
         } else if (!nim.contains(code)) {
-            return "The number needs to contains 10370311";
+            return "NIM anda harus terdapat 10370311";
         }
         return nim;
     }
 
     String cek2(String email) {
         if(!email.contains(domain)){
-            return "The email needs to contains domain @webmail.umm.ac.id";
+            return "Email UMM anda harus terdapat domain @webmail.umm.ac.id";
         }
         return email;
     }
 
     String cek3(String name){
-        name = name.replaceAll("\\d","");
+        if(!name.matches("^[ A-zA-Z]+$")){
+            return "Nama anda harus alfabet saja";
+        }
         return name;
+    }
+
+    String cek4(String telp){
+        if(!telp.contains("62")){
+            return "Nomer anda harus diawali dengan 62";
+        }
+        return telp;
     }
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Tugas1 pengecekan = new Tugas1();
         boolean correct = false;
-        String name, email, NIM, temptelp;
-        Long Telp;
+        String name, email, NIM, telp;
 
         // 202110370311462
         // bahrululumfr@webmail.umm.ac.id
         // 85731513332
         // Bahrul Ulum
-        
         
         while(!correct){
             try{
@@ -49,13 +56,12 @@ public class Tugas1 {
                 email = input.nextLine();
 
                 System.out.printf("Masukan No.Telp : ");
-                temptelp = input.nextLine();
-                Telp = Long.parseLong(temptelp);
+                telp = input.nextLine();
 
                 System.out.println("\nNama\t: " + pengecekan.cek3(name));
                 System.out.println("NIM\t: " + pengecekan.cek(NIM));
                 System.out.println("Email\t: " + pengecekan.cek2(email));
-                System.out.println("No.Telp\t: 0" + Telp);
+                System.out.println("No.Telp\t: " + pengecekan.cek4(telp));
                 
                 correct = true;
 
@@ -64,5 +70,6 @@ public class Tugas1 {
                 System.out.println(e);
             }
         }
+
     }
 }
