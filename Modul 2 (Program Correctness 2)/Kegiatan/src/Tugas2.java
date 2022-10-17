@@ -19,7 +19,7 @@ public class Tugas2 implements library {
     public String[] place = { "Malang", "Bandung", "Surabaya" };
 
     public void cekDate(int date) {
-        if (date == 1) {
+        if (date == 0) {
             for (String b : book) {
                 int parsedYear = Integer.parseInt(parseBook(b, "date"));
                 if (parsedYear <= 2018) {
