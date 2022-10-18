@@ -19,19 +19,12 @@ public class Tugas2 implements library {
     public String[] place = { "Malang", "Bandung", "Surabaya" };
 
     public void cekDate(int date) {
-        if (date == 1) {
-            for (String b : book) {
-                int parsedYear = Integer.parseInt(parseBook(b, "date"));
-                if (parsedYear <= 2018) {
-                    System.out.printf("%s, %s. %s\n", parseBook(b, "name"), parseBook(b, "from"), parseBook(b, "date"));
-                }
-            }
-        } else {
-            for (String b : book) {
-                int parsedYear = Integer.parseInt(parseBook(b, "date"));
-                if (parsedYear > 2018) {
-                    System.out.printf("%s, %s. %s\n", parseBook(b, "name"), parseBook(b, "from"), parseBook(b, "date"));
-                }
+        for (int i = 0; i < book.length; i++) {
+            int parsedYear = Integer.parseInt(parseBook(book[i], "date"));
+            if (parsedYear < 2018 && date < 2018) {
+                System.out.printf("%s, %s. %s\n", parseBook(book[i], "name"), parseBook(book[i], "from"), parseBook(book[i], "date"));
+            } else {
+                System.out.printf("%s, %s. %s\n", parseBook(book[i], "name"), parseBook(book[i], "from"), parseBook(book[i], "date"));
             }
         }
     }
