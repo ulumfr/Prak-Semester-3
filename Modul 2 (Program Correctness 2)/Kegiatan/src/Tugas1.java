@@ -39,11 +39,6 @@ public class Tugas1 {
         boolean correct = false;
         String name, email, NIM, telp;
 
-        // 202110370311462
-        // bahrululumfr@webmail.umm.ac.id
-        // 6285731513332
-        // Bahrul Ulum
-        
         while(!correct){
             try{
                 System.out.printf("Masukan Nama\t: ");
