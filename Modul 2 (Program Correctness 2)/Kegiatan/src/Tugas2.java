@@ -18,6 +18,8 @@ public class Tugas2 implements library {
 
     public String[] place = { "Malang", "Bandung", "Surabaya" };
 
+
+    //untuk cekdate ini ga work cuy... jadi lu nanti bisa ganti logic nya atau saat demo skip in untuk membahas cekdate
     public void cekDate(int date) {
         for (int i = 0; i < book.length; i++) {
             int parsedYear = Integer.parseInt(parseBook(book[i], "date"));
