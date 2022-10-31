@@ -1,7 +1,7 @@
+package Gabungan;
+
 public class Balok {
-    private int panjang;
-    private int lebar;
-    private int tinggi;
+    int panjang, lebar, tinggi;
 
     public int getPanjang() {
         return panjang;
@@ -27,9 +27,16 @@ public class Balok {
         this.tinggi = tinggi;
     }
 
-    protected void hasil(){
+    protected void hasil() {
         Perhitungan ph = new Perhitungan();
-        System.out.println("Hasil Luas Balok\t : " + ph.luas(panjang, lebar, tinggi) + " cm");
-        System.out.println("Hasil Volume Balok\t : " + ph.volume(panjang, lebar, tinggi) + " cm^3");
+        System.out.println("Hasil Luas Balok\t : " + ph.Luas(this) + " cm");
+        System.out.println("Hasil Volume Balok\t : " + ph.Volume(this) + " cm^3");
     }
+
+    // Live Demo Refactoring
+    static boolean isCube(long input) {
+        return (Math.round(Math.cbrt(input)) * Math.round(Math.cbrt(input))
+                * Math.round(Math.cbrt(input))) == input;
+    }
+
 }

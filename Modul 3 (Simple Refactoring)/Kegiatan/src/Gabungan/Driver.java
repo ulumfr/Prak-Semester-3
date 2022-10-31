@@ -1,3 +1,5 @@
+package Gabungan;
+
 import java.util.Scanner;
 
 public class Driver {
@@ -6,6 +8,7 @@ public class Driver {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Balok balok = new Balok();
+        Perhitungan hitung = new Perhitungan();
 
         System.out.println("=== Menghitung Luas dan Volume Balok ===\n");
 
@@ -21,9 +24,12 @@ public class Driver {
         Tinggi = input.nextInt();
         balok.setTinggi(Tinggi);
 
-        System.out.println("\n=== Hasil Perhitungan Balok ===\n");
+        System.out.println("\n=== Hasil Perhitungan ===\n");
         balok.hasil();
-        input.close();
 
+        System.out.println("\n=== Cube Tugas 3 ===");
+        System.out.println("\nBalok is " + balok.isCube(hitung.Luas(balok)) + "\n");
+
+        input.close();
     }
 }
