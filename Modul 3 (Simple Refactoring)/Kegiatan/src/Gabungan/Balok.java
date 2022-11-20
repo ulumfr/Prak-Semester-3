@@ -35,8 +35,14 @@ public class Balok {
 
     // Live Demo Refactoring
     static boolean isCube(long input) {
+        // Before
         return (Math.round(Math.cbrt(input)) * Math.round(Math.cbrt(input))
                 * Math.round(Math.cbrt(input))) == input;
+
+        // After
+        // boolean cube = (Math.round(Math.cbrt(input)) * Math.round(Math.cbrt(input))
+        //         * Math.round(Math.cbrt(input))) == input;
+        // return cube;
     }
 
 }

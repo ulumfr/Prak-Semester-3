@@ -28,7 +28,7 @@ public class Driver {
         balok.hasil();
 
         System.out.println("\n=== Cube Tugas 3 ===");
-        System.out.println("\nBalok is " + balok.isCube(hitung.Luas(balok)) + "\n");
+        System.out.println("\nCube is " + balok.isCube(hitung.Luas(balok)) + "\n");
 
         input.close();
     }
