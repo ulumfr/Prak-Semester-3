@@ -20,6 +20,7 @@ public class Tugas1 {
         System.out.print("\nInput Elemen\t: ");
         int cari = input.nextInt();
 
+        System.out.print("\nIndex dari " + cari + "\t: ");
         Search(cari);
         input.close();
     }
@@ -41,7 +42,6 @@ public class Tugas1 {
         int i = 0;
         boolean empty = true;
 
-        System.out.print("\nIndex\t\t: ");
         while (i < data.length) {
             if (data[i] == input) {
                 String view = Integer.toString(i);
@@ -53,6 +53,7 @@ public class Tugas1 {
         if (empty) {
             System.out.println("Index tidak ditemukan!!");
         }
+        System.out.println();
     }
 
     public static void main(String[] args) {

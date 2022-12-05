@@ -18,13 +18,14 @@ public class Tugas2 {
         System.out.print("\nInput Elemen\t: ");
         int elemen = input.nextInt();
 
-        System.out.print("\nIndex\t\t: ");
+        System.out.print("\nIndex dari " + elemen + "\t: ");
 
         while (nilai.hasNext()) {
             if (nilai.next().equals(elemen)) {
                 System.out.print((nilai.nextIndex() - 1) + " ");
             }
         }
+        System.out.println();
         input.close();
     }
 }
