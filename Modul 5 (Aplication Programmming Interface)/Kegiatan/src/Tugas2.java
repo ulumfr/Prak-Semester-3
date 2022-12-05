@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.ListIterator;
+import java.util.Comparator;
+import java.util.Scanner;
 
 public class Tugas2 {
     public static void main(String[] args) {

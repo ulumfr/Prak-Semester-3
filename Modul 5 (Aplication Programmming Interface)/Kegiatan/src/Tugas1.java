@@ -53,8 +53,6 @@ public class Tugas1 {
         if (empty) {
             System.out.println("Index tidak ditemukan!!");
         }
-        System.out.println();
-
     }
 
     public static void main(String[] args) {
