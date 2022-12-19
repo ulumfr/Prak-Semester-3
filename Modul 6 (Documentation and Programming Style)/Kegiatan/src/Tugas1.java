@@ -1,3 +1,7 @@
+/**
+  @author Bahrul 'Ulum Fadhlur Rohman (202110370311462)
+*/
+
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -23,8 +27,14 @@ public class Tugas1 {
         }
     }
 
+    /**
+      Input dari User dimasukan kedalam method menu()
+      Jika user menginputkan String, maka value masuk ke inString
+      Jika user menginputkan Number, maka value masuk ke inNumber
+      @throws IOException
+    */
     void menu() throws IOException {
-        System.out.println("===== Inputan Number dan String =====\n");
+        System.out.println("===== Inputan Array Number dan String =====\n");
         System.out.println("##### Database Awal #####\n");
 
         try {
@@ -71,9 +81,13 @@ public class Tugas1 {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        System.out.println("\n=====================================");
+        System.out.println("\n==========================================");
     }
 
+    /**
+      @param text checking inputan dari user
+      @return
+    */
     boolean cekNum(String text) {
         try {
             Integer.parseInt(text);
@@ -83,6 +97,10 @@ public class Tugas1 {
         }
     }
 
+    /**
+      @param num menambahkan number ke local database
+      @throws IOException
+    */
     void tambahNumber(int[] num) throws IOException {
         FileWriter fw = new FileWriter(dbNumber, true);
 
@@ -93,6 +111,10 @@ public class Tugas1 {
         fw.flush(); fw.close();
     }
 
+    /**
+      @param str menambahkan String ke local database
+      @throws IOException
+    */
     void tambahString(String[] str) throws IOException {
         FileWriter fw = new FileWriter(dbString, true);
 
@@ -103,6 +125,12 @@ public class Tugas1 {
         fw.flush(); fw.close();
     }
 
+    /**
+      Display() untuk menampilkan data yang sudah disimpan pada lokal database
+      @param dbFile variable lokal database
+      @param category membedakan variable inNumber dengan inString
+      @throws Exception
+    */
     void display(String dbFile, String category) throws Exception {
         try {
             FileReader fr = new FileReader(dbFile);
