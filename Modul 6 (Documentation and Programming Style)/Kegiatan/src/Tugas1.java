@@ -25,7 +25,7 @@ public class Tugas1 {
 
     void menu() throws IOException {
         System.out.println("===== Inputan Number dan String =====\n");
-        System.out.println("##### Database Terkini #####\n");
+        System.out.println("##### Database Awal #####\n");
 
         try {
             display(dbNumber, "inNumber");
@@ -64,13 +64,14 @@ public class Tugas1 {
         tambahNumber(inNumber);
         tambahString(inString);
 
-        System.out.println("\n##### Database (Num or Str) #####\n");
+        System.out.println("\n##### Database Akhir #####\n");
         try {
             display(dbNumber, "inNumber");
             display(dbString, "inString");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+        System.out.println("\n=====================================");
     }
 
     boolean cekNum(String text) {
@@ -89,8 +90,7 @@ public class Tugas1 {
             fw.write(String.format("%s|\n", n));
         }
         
-        fw.flush();
-        fw.close();
+        fw.flush(); fw.close();
     }
 
     void tambahString(String[] str) throws IOException {
@@ -100,8 +100,7 @@ public class Tugas1 {
             fw.write(String.format("%s|\n", s));
         }
 
-        fw.flush();
-        fw.close();
+        fw.flush(); fw.close();
     }
 
     void display(String dbFile, String category) throws Exception {
@@ -119,8 +118,7 @@ public class Tugas1 {
             } while (outputData != null);
 
             System.out.print("\n");
-            br.close();
-            fr.close();
+            br.close(); fr.close();
         } catch (FileNotFoundException | NullPointerException e) {
             System.out.println("Database " + category + " Kosong");
         }
