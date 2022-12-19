@@ -25,7 +25,7 @@ public class Tugas1 {
 
     void menu() throws IOException {
         System.out.println("===== Inputan Number dan String =====\n");
-        System.out.println("Data Terkini : ");
+        System.out.println("##### Database Terkini #####\n");
 
         try {
             display(dbNumber, "inNumber");
@@ -37,7 +37,7 @@ public class Tugas1 {
         System.out.printf("\nInput Data (y/n) ? ");
         pilih = input.next().charAt(0);
 
-        if (pilih == 'y' || pilih == 'Y') {
+        if (pilih == 'y') {
             do {
                 System.out.print("\nData (Num/String) : ");
                 tempInput = input.next();
@@ -59,15 +59,12 @@ public class Tugas1 {
                     valid = false;
                 }
             } while (valid);
-        }else if (pilih == 'n' || pilih == 'N'){
-            System.exit(0);
-        }else{
-            System.out.println("\nInputan Salah\n");
         }
 
         tambahNumber(inNumber);
         tambahString(inString);
 
+        System.out.println("\n##### Database (Num or Str) #####\n");
         try {
             display(dbNumber, "inNumber");
             display(dbString, "inString");
@@ -89,7 +86,7 @@ public class Tugas1 {
         FileWriter fw = new FileWriter(dbNumber, true);
 
         for (int n : num) {
-            fw.write(String.format("%s,\n", n));
+            fw.write(String.format("%s|\n", n));
         }
         
         fw.flush();
@@ -100,7 +97,7 @@ public class Tugas1 {
         FileWriter fw = new FileWriter(dbString, true);
 
         for (String s : str) {
-            fw.write(String.format("%s,\n", s));
+            fw.write(String.format("%s|\n", s));
         }
 
         fw.flush();
@@ -116,8 +113,8 @@ public class Tugas1 {
             System.out.print(category + " = ");
 
             do {
-                StringTokenizer st = new StringTokenizer(outputData, ",");
-                System.out.print(st.nextToken() + " ");
+                StringTokenizer st = new StringTokenizer(outputData, "|");
+                System.out.print(st.nextToken() + " | ");
                 outputData = br.readLine();
             } while (outputData != null);
 
